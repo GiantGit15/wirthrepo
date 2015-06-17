@@ -1,0 +1,85 @@
+# -*- coding: utf-8 -*-
+$:.unshift('/Library/RubyMotion/lib')
+require 'motion/project/template/ios'
+require 'bundler'
+Bundler.setup
+Bundler.require
+
+#require 'motion-cocoapods'
+
+require 'ruby_motion_query'
+require "sugarcube-classic"
+#require 'motion-blitz'
+
+Motion::Project::App.setup do |app|
+
+  app.name = 'POPsocial'
+  app.identifier = 'com.popsocial.POPsocial'
+  app.short_version = '0.1.0'
+  app.version = app.short_version
+
+  app.info_plist['UIStatusBarHidden'] = true
+
+  app.deployment_target = '7.1'
+
+  #app.sdk_version = '7.0'
+  #app.deployment_target = '5.0'
+  # Or for iOS 6
+  #app.sdk_version = '6.1'
+  #app.deployment_target = '6.0'
+
+  app.icons = ["icon@2x.png", "icon-29@2x.png", "icon-40@2x.png", "icon-60@2x.png", "icon-76@2x.png", "icon-512@2x.png"]
+
+  app.device_family = [:ipad]
+  app.interface_orientations = [:landscape_left, :landscape_right]
+
+  app.files += Dir.glob(File.join(app.project_dir, 'lib/**/*.rb'))
+
+  # Use `rake config' to see complete project settings, here are some examples:
+  #
+  # app.fonts = ['Oswald-Regular.ttf', 'FontAwesome.otf'] # These go in /resources
+  app.fonts = ['Nobel_Family_sOT/Nobel-Book.otf', 'Nobel_Family_sOT/Nobel-Black.otf'] # These go in /resources
+  # app.frameworks += %w(QuartzCore CoreGraphics MediaPlayer MessageUI CoreData)
+
+  # Using the collection view on an iPad one requires the folloing
+  #app.frameworks += %w(QuartzCore)
+  #app.libs << "-fobjc-arc"
+  #app.vendor_project("vendor/PSTCollectionView", :static)
+  
+  #app.vendor_project("vendor/AddThis", :static)
+
+  # rmq uses a UIRefreshControl avail. io6+ so we need the following
+  #app.vendor_project("vendor/CKRefreshControl", :static, :cflags => "-fobjc-arc")
+  # app.vendor_project('vendor/Flurry', :static)
+  # app.vendor_project('vendor/DSLCalendarView', :static, :cflags => '-fobjc-arc') # Using arc
+  #
+  
+  app.frameworks += %w{ Accounts Social }
+  app.frameworks += %w(AVFoundation CoreLocation QuartzCore MapKit MediaPlayer)
+  app.frameworks << "CFNetwork"
+  app.frameworks << "MessageUI"
+
+  app.weak_frameworks += %w(AdSupport Accounts Social)
+  app.info_plist['FacebookAppID'] = '613102788765274'
+
+  app.info_plist['FacebookDisplayName'] = "popsocial"
+  #app.info_plist['URL types'] = { 'URL Schemes' => 'fb613102788765274'}
+  #app.info_plist['CFBundleURLTypes'] = [{'CFBundleURLSchemes' => ['fb613102788765274']}]
+
+  app.pods do
+    pod 'AFNetworking'
+    pod 'SDWebImage', '~>3.6'
+
+    #pod "AnimatedGIFImageSerialization", :podspec => 'custom_podspecs/AnimatedGIFImageSerialization.podspec'
+    pod "AnimatedGIFImageSerialization"
+    pod 'SVProgressHUD', :head
+  end
+
+end
+
+desc "Clean the vendor build folder"
+task :vendorclean => [:clean] do
+  sh "rm", "-rf", "vendor/build"
+  sh "rm", "-rf", "vendor/Pods"
+end
+

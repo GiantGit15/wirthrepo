@@ -1,0 +1,5 @@
+<% @photosets.each do |photoset| %>
+  <div class="photo-frame">
+    <img src="<%= photoset_path photoset.id %>">
+  </div>
+<% end %>

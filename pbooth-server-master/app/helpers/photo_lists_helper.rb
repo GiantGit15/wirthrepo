@@ -1,0 +1,2 @@
+module PhotoListsHelper
+end

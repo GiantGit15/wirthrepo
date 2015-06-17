@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+<strong>Name:</strong>
+<%= @event.name %>
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <td></td>
+      <td></td>
+    </tr>
+  </thead>
+  <tbody>
+  <% @event.attribute_names.each do |attr_name| %>
+    <tr>
+      <td><strong><%= attr_name.titleize %>: </strong></td>
+      <td><%= @event.send(attr_name) %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<p>
+<%= link_to 'Edit', edit_event_path(@event) %> |
+<%= link_to 'Back', root_path %>
+</p>
+

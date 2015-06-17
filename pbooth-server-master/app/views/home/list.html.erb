@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+
+<div class="list">
+  
+  <div class="item">
+    <strong>event:</strong>
+    <%= @event.name %>
+  </div>
+
+  <div class="item">
+    <strong>event_id:</strong>
+    <%= @event.id %>
+  </div>
+
+  <div class="item">
+    <div class="item-header">photos:</div>
+    <% @event.photosets.each do |photoset| %>
+      <div class="photoset">
+        <!-- <h4><%= photoset.id %></h4> -->
+        <% photoset.photos.each do |photo| %>
+          <div class="photo"><%= photo.id %></div>
+        <% end %>
+      </div>
+  <% end %>
+  </div>
+</div>
+

@@ -1,0 +1,148 @@
+// import the CSS framework
+@import "bootstrap";
+
+// make all images responsive by default
+img {
+  @extend .img-responsive;
+  margin: 0 auto;
+  }
+// override for the 'Home' navigation link
+.navbar-brand {
+  font-size: inherit;
+  }
+
+// THESE ARE EXAMPLES YOU CAN MODIFY
+// create your own classes
+// to make views framework-neutral
+.column {
+  @extend .col-md-6;
+  @extend .text-center;
+  }
+.form {
+  @extend .col-md-6;
+  }
+.form-centered {
+  @extend .col-md-6;
+  @extend .text-center;
+  }
+.submit {
+  @extend .btn;
+  @extend .btn-primary;
+  @extend .btn-lg;
+  }
+// apply styles to HTML elements
+// to make views framework-neutral
+main {
+  @extend .container;
+  background-color: #eee;
+  padding-bottom: 80px;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 20px;
+  width: calc(100% - 10px);
+  margin-top: 60px; //104px; // accommodate the navbar
+  }
+section {
+  @extend .row;
+  margin-top: 20px;
+  }
+
+// Pbooth stuff
+
+.pbooth-nav{
+  background-color: white;
+  height: 104px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+.photo-frame{
+  width:25%;
+  //border: 5px solid white;
+  //height:525px;
+  float: left;
+  //margin-right: 10px;
+  background-color: black;
+  &.selected {
+    border: 5px solid blue;
+    img{
+      opacity:0.6;
+   }
+  }
+}  
+
+.click-print-share{
+  width: 30%;
+  height: 100%;
+  background-color: grey;
+  .cps{
+    width: 33%;
+    height: 100%;
+    float:left;
+  }
+  .cps-click{
+    background-image: url("click_print_share/header_click.png")
+  }
+  .cps-print{
+    background-image: url("click_print_share/header_print.png")
+  }
+  .cps-share{
+    background-image: url("click_print_share/header_share.png")
+  }
+}
+//Default styling for some elements
+table {
+    @extend .table;
+      @extend .table-striped;
+        margin: 0;
+          font-size: 95%;
+            padding: 5px;
+              /*margin-top: 1em;*/
+          }
+          input[type="submit"] {
+              @extend .btn;
+                @extend .btn-primary;
+              }
+
+.bs-callout{
+              margin: 20px 0;
+              padding: 20px;
+              border-left: 3px solid #eee;
+            }
+
+.bs-callout-info{
+  background-color: #f4f8fa;
+  border-color: #5bc0de;
+}
+
+div.list{
+  div.item{
+    @extend .clearfix;
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #f4f8fa;
+    border-color: #5bc0de;
+
+    .item-header{
+      @extend strong;
+    }
+
+    .photoset{
+      float:left;
+      margin: 20px;
+      border: 3px solid #eee;
+
+      .photo{
+        margin: 10px;
+        border: 3px solid #eee;
+        float: left;
+      }
+    }
+  }
+}
+
+div.latest-event{
+  margin-bottom: 50px;
+}

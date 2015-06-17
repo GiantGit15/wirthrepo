@@ -1,0 +1,7 @@
+# Logfile created on 2014-02-07 12:01:26 -0500 by logger.rb/36483
+I, [2014-02-07T12:01:26.712892 #37523]  INFO -- : 0:  rake (10.1.0) from /Users/vaughan/projects/rubymotion/Hello/vendor/bundle/specifications/rake-10.1.0.gemspec
+I, [2014-02-07T12:01:26.713699 #37523]  INFO -- : 0:  bundler (1.5.1) from /Users/vaughan/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/bundler-1.5.1/lib/bundler/source
+I, [2014-02-07T12:16:54.586531 #37798]  INFO -- : 0:  rake (10.1.0) from /Users/vaughan/projects/rubymotion/Hello/vendor/bundle/specifications/rake-10.1.0.gemspec
+I, [2014-02-07T12:16:54.590534 #37798]  INFO -- : 0:  bundler (1.5.1) from /Users/vaughan/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/bundler-1.5.1/lib/bundler/source
+I, [2014-02-20T10:21:37.112338 #13690]  INFO -- : 0:  rake (10.1.0) from /Users/vaughan/projects/rubymotion/Hello/vendor/bundle/specifications/rake-10.1.0.gemspec
+I, [2014-02-20T10:21:37.115230 #13690]  INFO -- : 0:  bundler (1.5.1) from /Users/vaughan/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/bundler-1.5.1/lib/bundler/source

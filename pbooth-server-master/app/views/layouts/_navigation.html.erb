@@ -1,0 +1,49 @@
+<%# navigation styled for Bootstrap 3.0 %>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="<%= root_path %>">photoboothPOPup</a>
+          </div>
+          <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <!--
+              <li><%= link_to "Home", root_path %></li>
+              <li><a href="#photos">Photos</a></li>
+              <li><a href="#gifs">Gifs</a></li>
+              -->
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <!--
+              <li><%= link_to "Admin", admin_path %></li>
+              -->
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">API<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li class="dropdown-header">HTML</li>
+                  <li><%= link_to "/list", list_path %></li>
+                  <li class="divider"></li>
+                  <li class="dropdown-header">JSON</li>
+                  <li><%= link_to "/list", list_path(format: :json) %></li>
+                </ul>
+              </li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+
+
+<!--<nav class="pbooth-nav">
+  <div class="click-print-share">
+    <div class="cps cps-click"></div>
+    <div class="cps cps-print"></div>
+    <div class="cps cps-share"></div>
+  </div>
+</nav>-->
+

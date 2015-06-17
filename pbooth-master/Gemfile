@@ -1,0 +1,15 @@
+source 'https://rubygems.org'
+
+gem "rake"
+gem "motion-cocoapods"
+#gem 'ruby_motion_query'
+gem 'ruby_motion_query', :git => 'git@github.com:infinitered/rmq.git'
+# gem 'cdq'
+gem 'bubble-wrap', '~> 1.7.0'
+gem "sugarcube"
+#gem "formotion"
+gem 'formotion', '~> 1.8.0'
+gem "webstub"
+gem "afmotion"
+# gem 'motion-support'
+#gem 'motion-blitz'

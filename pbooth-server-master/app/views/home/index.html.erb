@@ -1,0 +1,5 @@
+<% @photos.each do |photo| %>
+  <div class="photo-frame">
+    <img src="<%= photo_path photo.id %>">
+  </div>
+<% end %>

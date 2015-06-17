@@ -1,0 +1,79 @@
+
+
+<%= simple_form_for( @event, html: { class: 'form-horizontal'}, wrapper: :horizontal_form,
+  wrapper_mappings: {
+    check_boxes: :horizontal_radio_and_checkboxes,
+    radio_buttons: :horizontal_radio_and_checkboxes,
+    file: :horizontal_file_input,
+    boolean: :horizontal_boolean
+  }) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      Gifs
+    </div>
+    <div class="panel-body">
+      <div class="form-inputs">
+        <%= f.input :gif_mode %>
+        <%= f.input :photos_in_set %>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      Dimensions
+    </div>
+    <div class="panel-body">
+      <div class="form-inputs">
+        <%= f.input :multiple_orientations %>
+        <%= f.input :branded_image_width, label: "Main image width" %>
+        <%= f.input :branded_image_height, label: "Main image height" %>
+        <%= f.input :display_image_width, label: "Thumbnail image width" %>
+        <%= f.input :display_image_height, label: "Thumbnail image height" %>
+        <%= f.input :print_image_width, label: "Print image width" %>
+        <%= f.input :print_image_height, label: "Print image width" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      Smugmug
+    </div>
+    <div class="panel-body">
+      <div class="form-inputs">
+        <%= f.input :option_smugmug, label: "Upload to smugmug" %>
+        <%= f.input :smugmug_album %>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      Sharing
+    </div>
+    <div class="panel-body">
+      <div class="form-inputs">
+        <%= f.input :option_print, label: "Enable Printing" %>
+
+        <%= f.input :option_email, label: "Enable email" %>
+        <%= f.input :copy_email_subject, label: "Email subject" %>
+        <%= f.input :copy_email_body, label: "Email body" %>
+
+        <%= f.input :option_twitter, label: "Enable Twitter" %>
+        <%= f.input :copy_twitter, label: "twitter copy" %>
+
+        <%= f.input :option_facebook, label: "Enable Facebook" %>
+        <%= f.input :copy_social, label: "facebook copy" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
+
+</div>

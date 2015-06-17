@@ -1,0 +1,54 @@
+<div class="latest-event">
+	<% puts @event %>
+	<% if @event == nil %>
+		<p>There are no photos </p>
+	<% else %>
+		<h2><%= @event.name %> <small>is the latest event. 
+		    <%= link_to "Edit", edit_event_path(@event.id) %> | 
+		    <%= link_to "Show", event_path(@event.id) %>
+		  </small>
+		  </h2>
+	</div>
+
+	<table>
+		<thead>
+		  <tr>
+		    <th>Event</th>
+		    <th>Photos</th>
+		    <th>Photosets</th>
+		    <th>Select</th>
+		    <!--<th>Sync</th>-->
+		    <th>Edit | Show</th>
+		  </tr>
+		</thead>
+		<tbody>
+		<% @events.each do |event| %>
+		  <tr <%= raw 'class="info"' if event.active? %>>
+		<td><%= event.name %></td>
+		<td><%= event.photos.count %></td>
+		<td><%= event.photosets.count %> / <%= event.photosets.fullup_count event.photos_in_set.to_i %> / <%= event.photosets.valid_count %></td>
+		<td>
+		  <% if event.active? %>
+		    <%= form_tag( deactivate_event_path(event.id) ) do -%>
+		      <div><%= submit_tag 'Deactivate' %></div>
+		    <% end -%>
+		  <% else %>
+		    <%= form_tag( activate_event_path(event.id) ) do -%>
+		      <div><%= submit_tag 'Activate' %></div>
+		    <% end -%>
+		  <% end %>
+		</td>
+		  <td>
+		    <%= link_to "Edit", edit_event_path(event.id) %> | 
+		    <%= link_to "Show", event_path(event.id) %>
+		  </td>
+	</tr>
+	<% end %>
+		</tbody>
+	</table>
+
+	<div class="bs-callout bs-callout-info">
+		    <h4>Tip</h4>
+		    <p>Activiating an event will start detecting and processing incoming photos for that event</p>
+	</div>
+<% end %>

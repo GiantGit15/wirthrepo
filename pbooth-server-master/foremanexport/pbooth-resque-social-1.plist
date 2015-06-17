@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>pbooth-resque-social-1</string>
+    <key>EnvironmentVariables</key>
+    <dict>
+        <key>PORT</key>
+        <string>5300</string>
+    </dict>
+    <key>ProgramArguments</key>
+    <array>
+        <string>/Users/vaughan/.rbenv/shims/bundle</string>
+        <string>exec</string>
+        <string>rake</string>
+        <string>resque:work</string>
+        <string>QUEUE=social</string>
+        <string>RAILS_ENV=production</string>
+    </array>
+    <key>KeepAlive</key>
+    <true/>
+    <key>RunAtLoad</key>
+    <true/>
+    <key>StandardOutPath</key>
+    <string>/Users/vaughan/projects/pbooth/log/pbooth-resque-social-1.log</string>
+    <key>StandardErrorPath</key>
+    <string>/Users/vaughan/projects/pbooth/log/pbooth-resque-social-1.log</string>
+    <key>WorkingDirectory</key>
+    <string>/Users/vaughan/projects/pbooth</string>
+</dict>
+</plist>

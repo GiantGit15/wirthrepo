@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>pbooth-web-1</string>
+    <key>EnvironmentVariables</key>
+    <dict>
+        <key>PORT</key>
+        <string>5000</string>
+    </dict>
+    <key>ProgramArguments</key>
+    <array>
+      <string>/Users/vaughan/.rbenv/shims/bundle</string>
+        <string>exec</string>
+        <string>rails</string>
+        <string>server</string>
+        <string>-e</string>
+        <string>production</string>
+        <string>-p</string>
+        <string>3000</string>
+    </array>
+    <key>KeepAlive</key>
+    <true/>
+    <key>RunAtLoad</key>
+    <true/>
+    <key>StandardOutPath</key>
+    <string>/Users/vaughan/projects/pbooth/log/pbooth-web-1.log</string>
+    <key>StandardErrorPath</key>
+    <string>/Users/vaughan/projects/pbooth/log/pbooth-web-1.log</string>
+    <key>WorkingDirectory</key>
+    <string>/Users/vaughan/projects/pbooth</string>
+</dict>
+</plist>

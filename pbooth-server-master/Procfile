@@ -1,0 +1,7 @@
+#web-watcher:    bundle exec rails server -e production -p 3000 --pid ./tmp/pids/server-watcher.pid
+watcher: bundle exec ./lib/daemons/watcher.rb
+web:    bundle exec rails server -e production -p 3000
+redis:  redis-server
+resque-photos: bundle exec rake resque:workers TERM_CHILD=1 COUNT=3 QUEUE=photos RAILS_ENV=production
+resque-social: bundle exec rake resque:workers TERM_CHILD=1 COUNT=5 QUEUE=social RAILS_ENV=production
+
